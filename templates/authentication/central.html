@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h2><a href="{% url 'index' %}">BACK</a></h2>
+        </div>
+        <section class="flex">
+            <form action="{% url 'central_search_result' %}" method="get" class="search-form">
+                <input type="text" name="search" id="search" placeholder="Enter name..." required>
+                <button type="submit" class="fas fa-search"></button>
+            </form>
+        </section>
+    </header>
+    <h1>Central Scholarship, Fellowship</h1>
+    
+    <section class="container">
+        <div class="form1">
+            <form action="{% url 'central_result' %}" method="get">
+                <h2>Filter</h2>
+                <select name="category" id="category">
+                    <option value="">Select Scholarship/Fellowship</option>
+                    <option value="Scholarship">Scholarship</option>
+                    <option value="Fellowship">Fellowship</option>
+                </select><br>
+                <select name="special_categories" id="special_categories">
+                    <option value="">Select Special Categories</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                    <option value="OBC">OBC</option>
+                    <option value="Open for all">Open for all</option>
+                    <option value="Specially-abled student">Specially-abled student</option>
+                    <option value="EBC">EBC</option>
+                    <option value="Women">Women</option>
+                    <option value="Minority">Minority</option>
+                    <option value="Orphens">Orphens</option>
+                    <option value="Artist">Artist</option>
+                    <option value="Sports">Sports</option>
+                    <option value="BC">BC</option>
+                    <option value="EWS">EWS</option>
+                    <option value="BPL">BPL</option>
+                    <option value="SEBC">SEBC</option>
+                    <option value="NTDNT">NTDNT</option>
+                    <option value="General">General</option>
+                    <option value="DNT">DNT</option>
+                    <option value="Bhramins">Bhramins</option>
+                </select><br>
+                <select name="qualification" id="qualification">
+                    <option value="">Select Qualification</option>
+                    <option value="Primary">Primary</option>
+                    <option value="Junior">Junior</option>
+                    <option value="10/High_School">10/High_School</option>
+                    <option value="10+2/Intermediate">10+2/Intermediate</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Medical">Medical</option>
+                    <option value="UG">UG</option>
+                    <option value="PG">PG</option>
+                    <option value="Ph.D/Doctorate">Ph.D/Doctorate</option>
+                    <option value="Researcher">Researcher</option>
+                    <option value="Work_Experience">Work_Experience</option>
+                    <option value="Others">Others</option>
+                </select><br>
+                <button class="submit" type="submit">Search</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    
+</head>
+<body class="body">
+    <header class="header">
+        <section class="flex">
+            <div class="icon">
+                <img src="{% static 'images/logo (1).svg' %}" alt="India">
+            </div>
+            <div class="title">
+                <h1>SCHOLARSHIPS FELLOWSHIPS</h1>
+            </div>
+            <div class="button">
+                <div class="btn">
+                    <a href="{% url 'signup' %}" id="btn">Register</a>
+                </div>
+                <div class="btn">
+                    <a href="{% url 'signin' %}" id="btn">Login</a>
+                </div>
+            </div>
+        </section>
+    </header>
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <img src="{% static 'images/scholarship.webp' %}">
+            </div>
+            <div class="col-2">
+                <h3>Scholarship</h3>
+                <p>A scholarship is a type of financial aid intended to assist students in covering the cost of an undergraduate, postgraduate, and research program. It is generally provided to students by the government, universities, or other organizations to help them further their education. Scholarships can come in the form of one-time cheques or provide money to the recipients each semester or academic year and are renewable. Most scholarships are awarded solely based on an application or any qualifications that make a person particularly qualified for the award. Many unusual circumstances, such as a person's last name, status as a single parent, or the fact that they have a handicapping ailment, may qualify them for a scholarship. Students who attend school full-time, have a minimum grade point average (GPA) and can demonstrate financial need may be eligible for more general scholarships offered by countries and states.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <h3>Fellowship</h3>
+                <p>Fellowship is a type of scholarship which is a completely merit-based form of funding. It is a short-term, fully sponsored opportunity and can last anywhere from a few weeks to a few years. Fellowship is usually concerned with personal, professional, or intellectual advancement. A particular association, organization, institution, or government sponsors fellowships and establishes the criteria for applicants. It is not required that the student get financial help as part of the fellowship, the research fellow may receive any additional advantages as part of the fellowship. The benefits of getting a fellowship are numerous. Among other things, fellowships can offer chances for professional development, personal and professional network growth, cultural immersion, and experience learning. Students gain from the application process itself, which aids them in developing their presentation and interview skills as well as their ability to communicate their values and future aspirations.</p>
+            </div>
+            <div class="col-4">
+                <img src="{% static 'images/fellowship.webp' %}">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <div class="container">
+        <div class="div1">
+            <h3>Scholarship</h3>
+            <p>A scholarship is a type of financial aid intended to assist students in covering the cost of an undergraduate, postgraduate, and research program. It is generally provided to students by the government, universities, or other organizations to help them further their education. Scholarships can come in the form of one-time cheques or provide money to the recipients each semester or academic year and are renewable. Most scholarships are awarded solely based on an application or any qualifications that make a person particularly qualified for the award. Many unusual circumstances, such as a person's last name, status as a single parent, or the fact that they have a handicapping ailment, may qualify them for a scholarship. Students who attend school full-time, have a minimum grade point average (GPA) and can demonstrate financial need may be eligible for more general scholarships offered by countries and states.</p>
+        </div>
+        <div class="div2">
+            <h3>Fellowship</h3>
+            <p>Fellowship is a type of scholarship which is a completely merit-based form of funding. It is a short-term, fully sponsored opportunity and can last anywhere from a few weeks to a few years. Fellowship is usually concerned with personal, professional, or intellectual advancement. A particular association, organization, institution, or government sponsors fellowships and establishes the criteria for applicants. It is not required that the student get financial help as part of the fellowship, the research fellow may receive any additional advantages as part of the fellowship. The benefits of getting a fellowship are numerous. Among other things, fellowships can offer chances for professional development, personal and professional network growth, cultural immersion, and experience learning. Students gain from the application process itself, which aids them in developing their presentation and interview skills as well as their ability to communicate their values and future aspirations.</p>
+        </div>
+    </div> -->
+    <div class="container1">
+        <div class="box">
+            <h3>Current Openings</h3>
+            <div class="img" style="background-image: url(https://img.freepik.com/free-vector/illustrationn-megaphone-monochrome-style-isolated-white-background_1284-38767.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1708300800&semt=sph); background-position: absolute;"></div>
+            <a href="{% url 'open_applications' %}" class="seemore">See More</a>
+        </div>
+        <div class="box">
+            <h3>How to use</h3>
+            <div class="img" style="background-image: url(https://st2.depositphotos.com/3268541/42925/v/450/depositphotos_429257960-stock-illustration-tablet-with-book-in-hand.jpg); background-position: absolute;"></div>
+            <a href="{% url 'guide' %}" class="seemore">See More</a>
+        </div>
+        <div class="box">
+            <h3>All Schemes</h3>
+            <div class="img" style="background-image: url(https://media.istockphoto.com/id/1367766076/vector/database-storage-icon-vector-for-your-website-design-logo-app-ui-illustration.jpg?s=612x612&w=0&k=20&c=5-nzlAxbGQMw-lJcZc_P9QbHWXGb00ZLimhhwtr9rnc=); background-position: absolute;"></div>
+            <a href="{% url 'index' %}" class="seemore">See More</a>
+        </div>
+    </div>
+</body>
+</html>

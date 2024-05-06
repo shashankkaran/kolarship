@@ -1,0 +1,165 @@
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    outline: none; border:none;
+    text-decoration: none;
+  }
+  
+h1{
+    align-items: center;
+    margin-left: 700px;
+    padding: auto;
+}
+
+.btn{
+  border-radius: .5rem;
+  cursor: pointer;
+  padding:1rem 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  display: block;
+  float: right;
+  margin-right: 3rem;
+  width: 50px;
+  background-color: #8e44ad;
+  color: #fff;
+}
+
+.btn:hover{
+  background-color: #314559;
+  color: #fff;
+}
+
+.btn1{
+  float: left;
+}
+
+.header{
+    position: sticky;
+    top:0; left:0; right: 0;
+    background-color: #fff;
+    z-index: 1000;
+    border-bottom: .1rem solid rgba(0,0,0,.2);
+    justify-content: space-evenly;
+  }
+  
+  .header .flex{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1.5rem 2rem;
+  }
+  
+  .header .flex .logo{
+    font-size:4rem;
+    color: #2c3e50;
+  }
+  
+  .header .flex .search-form{
+    width: 50rem;
+    border-radius: .5rem;
+    background-color: #eee;
+    padding:1.5rem 2rem;
+    display: flex;
+    margin-top: -20px;
+    margin-left: 120px;
+    gap:4rem; 
+  }
+  
+  .header .flex .search-form input{
+    width: 100%;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    background:none;
+  }
+  
+  .header .flex .search-form button{
+    background:none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #2c3e50;
+  }
+  
+  .header .flex .search-form button:hover{
+    color: #8e44ad;
+  }
+
+.form{
+    width: 250px;
+    height: 350px;
+    background: linear-gradient(to top,rgba(0,0,0,0.5)50%,
+    rgba(0,0,0,0.5)50%);
+    position: absolute;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    padding: 25px;
+    cursor: pointer;
+}
+
+.form1{
+    left: 250px;
+    height: 600px;
+    width: 450px;
+}
+
+.form2{
+    height: 180px;
+    right: 250px;
+    top: 250px;
+}
+
+.form h2{
+    width: 220px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #ff7200;
+    font-size: 18px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 8px;
+}
+   
+.form input{
+    width: 450px;
+    height: 25px;
+    background: transparent;
+    border-bottom: 1px solid #ff7200;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 15px;
+    margin-top: 30px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.form2 input{
+    width: 240px;
+}
+
+.form ::placeholder{
+    color: #eee;
+}
+
+.submit{
+    width: 240px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-top: 40px;
+    font-size: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+   
+.submit:hover{
+    background: #fff;
+    color: #ff7200;
+    font-size: 15px;
+    font-family: sans-serif;
+}

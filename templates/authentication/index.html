@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header class="header">
+        <section class="flex">
+            <form action="{% url 'search_result' %}" method="get" class="search-form">
+                <input type="text" name="search" id="search" placeholder="Enter name..." required>
+                <button type="submit" class="fas fa-search"></button>
+            </form>
+            <div class="button">
+                <div class="btn">
+                    <a href="{% url 'signin' %}" id="btn">Login</a>
+                </div>
+            </div>
+        </section>
+    </header>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong>{{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    <!-- <div class="card-container">
+        <div class="card">
+            <a href="{% url 'state_view' %}">
+                <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; cursor: pointer;">
+                    <h3>State Government</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="{% url 'central_view' %}">
+                <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; cursor: pointer;">
+                    <h3>Central Government</h3>
+                </div>
+            </a>
+        </div>
+        
+        <div class="card">
+            <a href="{% url 'private_view' %}">
+                <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; cursor: pointer;">
+                    <h3>Private Organisation</h3>
+                </div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="{% url 'international_view' %}">
+                <div style="border: 1px solid #ccc; padding: 10px; margin: 10px; cursor: pointer;">
+                    <h3>International Organisation</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+    <a href="{% url 'scholarship_list' %}" class="btn">View Scholarships</a>
+
+    <a href="{% url 'open_applications' %}" class="btn">View Open Applications</a> -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Scholarships Fellowship</h1>
+                <p>Please select the category of the details you want to check. In this category you will have further classifications. Select your required category.</p>
+            </div>
+            <div class="col">
+                <div class="card card1">
+                    <div class="card-body">
+                        <h5>State Government</h5>
+                        <p>You will find scholarships/fellowships provided by State Government.</p>
+                        <a href="{% url 'state_view' %}"><button class="btn">See more..</button></a>
+                    </div>
+                </div>
+                
+                <div class="card card2">
+                    <div class="card-body">
+                        <h5>Central Government</h5>
+                        <p>You will find scholarships/fellowships provided by State Government.</p>
+                        <a href="{% url 'central_view' %}"><button class="btn">See more..</button></a>
+                    </div>
+                </div>
+                
+                <div class="card card3">
+                    <div class="card-body">
+                        <h5>Private Organisation</h5>
+                        <p>You will find scholarships/fellowships provided by different Private Organisation.</p>
+                        <a href="{% url 'private_view' %}"><button class="btn">See more..</button></a>
+                    </div>
+                </div>
+            
+                <div class="card card4">
+                    <div class="card-body">
+                        <h5>International Organisation</h5>
+                        <p>You will find scholarships/fellowships provided by different International Organisation.</p>
+                        <a href="{% url 'international_view' %}"><button class="btn">See more..</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+</head>
+<body>
+    <div class="logo">
+        <h4><a href="{% url 'index' %}">BACK</a></h4>
+    </div>
+    <h1>Searched Scholarship, Fellowship</h1>
+
+    {% if scholarships_data %}
+    <div class="card-container">
+        {% for scholarship in scholarships_data %}
+            <div class="card">
+                <h3 class="title">{{ scholarship.Name }}</h3>
+                <p><strong>Eligibility:</strong> {{ scholarship.Eligibility }}</p>
+                <p><strong>Eligible:</strong> {{ scholarship.Eligible }}</p>
+                <p><strong>Contacts (Offline Applications):</strong> {{ scholarship.Contacts_offline_applications }}</p>
+                <p><strong>Special Categories:</strong> {{ scholarship.Special_Categories}}</p>
+                <p><strong>Scholarship/Fellowship:</strong> {{ scholarship.Scholarship_Fellowship }}</p>
+                <p><strong>Level:</strong> {{ scholarship.Level }}</p>
+                <p><strong>Application Period:</strong> {{ scholarship.Application_Period }}</p>
+                <a href="{{ scholarship.Links_online_application }}" class="inline-btn">Click Here</a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    
+    <!-- Display central_data -->
+    {% elif central_data %}
+    <div class="card-container">
+        {% for scholarship in central_data %}
+            <div class="card">
+                <h3 class="title">{{ scholarship.Name }}</h3>
+                <p><strong>Eligibility:</strong> {{ scholarship.Eligibility }}</p>
+                <p><strong>Eligible:</strong> {{ scholarship.Eligible }}</p>
+                <p><strong>Contacts (Offline Applications):</strong> {{ scholarship.Contacts_offline_applications }}</p>
+                <p><strong>Special Categories:</strong> {{ scholarship.Special_Categories}}</p>
+                <p><strong>Scholarship/Fellowship:</strong> {{ scholarship.Scholarship_Fellowship }}</p>
+                <p><strong>Level:</strong> {{ scholarship.Level }}</p>
+                <p><strong>Application Period:</strong> {{ scholarship.Application_Period }}</p>
+                <a href="{{ scholarship.Links_online_application }}" class="inline-btn">Click Here</a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Display state_data -->
+    {% elif state_data %}
+    <div class="card-container">
+        {% for scholarship in state_data %}
+            <div class="card">
+                <h3 class="title">{{ scholarship.Name }}</h3>
+                <p><strong>Eligibility:</strong> {{ scholarship.Eligibility }}</p>
+                <p><strong>Eligible:</strong> {{ scholarship.Eligible }}</p>
+                <p><strong>Contacts (Offline Applications):</strong> {{ scholarship.Contacts_offline_applications }}</p>
+                <p><strong>Special Categories:</strong> {{ scholarship.Special_Categories}}</p>
+                <p><strong>Scholarship/Fellowship:</strong> {{ scholarship.Scholarship_Fellowship }}</p>
+                <p><strong>Level:</strong> {{ scholarship.Level }}</p>
+                <p><strong>State:</strong> {{ scholarship.State }}</p>
+                <p><strong>Application Period:</strong> {{ scholarship.Application_Period }}</p>
+                <a href="{{ scholarship.Links_online_application }}" class="inline-btn">Click Here</a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Display private_data -->
+    {% elif private_data %}
+    <div class="card-container">
+        {% for scholarship in private_data %}
+            <div class="card">
+                <h3 class="title">{{ scholarship.Name }}</h3>
+                <p><strong>Eligibility:</strong> {{ scholarship.Eligibility }}</p>
+                <p><strong>Eligible:</strong> {{ scholarship.Eligible }}</p>
+                <p><strong>Contacts (Offline Applications):</strong> {{ scholarship.Contacts_offline_applications }}</p>
+                <p><strong>Special Categories:</strong> {{ scholarship.Special_Categories}}</p>
+                <p><strong>Scholarship/Fellowship:</strong> {{ scholarship.Scholarship_Fellowship }}</p>
+                <p><strong>Level:</strong> {{ scholarship.Level }}</p>
+                <p><strong>State:</strong> {{ scholarship.State }}</p>
+                <p><strong>Application Period:</strong> {{ scholarship.Application_Period }}</p>
+                <a href="{{ scholarship.Links_online_application }}" class="inline-btn">Click Here</a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Display international_data -->
+    {% elif international_data %}
+    <div class="card-container">
+        {% for scholarship in international_data %}
+            <div class="card">
+                <h3 class="title">{{ scholarship.Name }}</h3>
+                <p><strong>Eligibility:</strong> {{ scholarship.Eligibility }}</p>
+                <p><strong>Eligible:</strong> {{ scholarship.Eligible }}</p>
+                <p><strong>Contacts (Offline Applications):</strong> {{ scholarship.Contacts_offline_applications }}</p>
+                <p><strong>Special Categories:</strong> {{ scholarship.Special_Categories}}</p>
+                <p><strong>Scholarship/Fellowship:</strong> {{ scholarship.Scholarship_Fellowship }}</p>
+                <p><strong>Level:</strong> {{ scholarship.Level }}</p>
+                <p><strong>State:</strong> {{ scholarship.State }}</p>
+                <p><strong>Application Period:</strong> {{ scholarship.Application_Period }}</p>
+                <a href="{{ scholarship.Links_online_application }}" class="inline-btn">Click Here</a>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <h3>No scholarships/fellowships found for the given search criteria.</h3>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h2><a href="{% url 'index' %}">BACK</a></h2>
+    <div class="card-container">
+        {% for scholarship in scholarships_data %}
+            <div class="card">
+                <!-- <h2>{{ scholarship.name }}</h2>
+                <p>{{ scholarship.description }}</p> -->
+                <h3 class="title">{{ scholarship.Name }}</h3>
+                <p><strong>Eligibility:</strong> {{ scholarship.Eligibility }}</p>
+                <p><strong>Eligible:</strong> {{ scholarship.Eligible }}</p>
+                <p><strong>Contacts (Offline Applications):</strong> {{ scholarship.Contacts_offline_applications }}</p>
+                <p><strong>Special Categories:</strong> {{ scholarship.Special_Categories}}</p>
+                <p><strong>Scholarship/Fellowship:</strong> {{ scholarship.Scholarship_Fellowship }}</p>
+                <p><strong>Level:</strong> {{ scholarship.Level }}</p>
+                <p><strong>Application Period:</strong> {{ scholarship.Application_Period }}</p>
+                <a href="{{ scholarship.Links_online_application }}" class="inline-btn">Click Here</a></p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

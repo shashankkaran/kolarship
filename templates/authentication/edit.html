@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+    <style>
+        .btn{
+  border-radius: .5rem;
+  cursor: pointer;
+  padding:1rem 1rem;
+  text-align: center;
+  
+  display: block;
+  float: right;
+  margin-right: 3rem;
+  width: 50px;
+  background-color: #8e44ad;
+  color: #fff;
+}
+
+.btn:hover{
+  background-color: #314559;
+  color: #fff;
+}
+        .btn1{
+            float: left;
+            margin-left: 3rem;
+        }
+
+        h1{
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+    <div>
+        <a href="{% url 'index' %}" class="btn btn1">Home</a>
+    </div>
+    <div>
+        <a href="{% url 'signout' %}" class="btn">Logout</a>
+    </div>
+    <h1>Edit Page</h1>
+    
+    
+    <section class="container">
+        <div class="form form1">
+            <form method="post" action="{% url 'edit_page' %}">
+                {% csrf_token %}        
+                <h3>Add New Data:</h3>
+                <input type="text" name="Name" required placeholder="Name.."><br>
+                <input type="text" name="Eligibility" placeholder="Eligibility.." required><br>
+                <input type="text" name="Eligible" placeholder="Eligible.." required><br>
+                <input type="text" name="Links_online_application" placeholder="Url.." required><br>
+                <input type="text" name="Contacts_offline_applications" placeholder="Contacts.."><br>
+                <input type="text" name="Scholarship_Fellowship" placeholder="Scholarship/Fellowship.." required><br>
+                <input type="text" name="Level" placeholder="Level.." required><br>
+                <input type="text" name="State" placeholder="State.."><br>
+                <input type="text" name="Application_Period" placeholder="Application Period.." required><br>
+                <button type="submit" name="action" class="submit" value="add">Add New Data</button>
+            </form>
+        </div>
+        <div class="form form2">
+            <form method="post" action="{% url 'edit_page' %}">
+                {% csrf_token %}
+                <h3>Delete Existing Data:</h3>
+                <input type="text" name="name_to_delete" placeholder="Name.." required>
+
+                <button type="submit" class="submit" name="action" value="delete">Delete Existing Data</button>
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

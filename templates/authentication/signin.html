@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+<!--     
+        <div class="content">
+            <div class="mainImage">
+                <img src="{% static 'images/slider1.jpg' %}" alt="Indian Gov Scholarships" width="800px" height="350px">
+            </div>
+            <div>
+                <form action="{% url 'signin' %}" method="post" enctype="multipart/form-data" class="form">
+                    {% csrf_token %}
+                    <h2>Login</h2>
+                    <input type="text" id="username" name="username" placeholder="Enter your Email.." required maxlength="50" class="box">
+                    <input type="password" id="password1" name="password1" placeholder="Create a Password.." required maxlength="20" class="box">
+                    <button class="btnn">Login</button>
+
+                    <p class="link">Don't have an account<br>
+                        <a href="/signup">Sign up </a> here</a></p>
+                    <p class="link">Forget Password<br>
+                        <a href="{% url 'password_reset' %}">click </a> here</a></p>
+                </form>
+            </div>
+        </div> -->
+    </div>   
+    <div class="wrapper">
+        <header>Login Form</header>
+        <form action="{% url 'signin' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text"id="username" name="username"  placeholder="Email Address">
+                    <i class="icon fas fa-envelope"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Email can't be blank</div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" id="password1" name="password1" placeholder="Password">
+                    <i class="icon fas fa-lock"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Password can't be blank</div>
+            </div>
+            <div class="pass-txt"><a href="{% url 'password_reset' %}">Forgot password?</a></div>
+            <input type="submit" value="Login">
+        </form>
+        <div class="sign-txt">Not yet member? <a href="/signup">Signup now</a></div>
+    </div>
+</body>
+</html>

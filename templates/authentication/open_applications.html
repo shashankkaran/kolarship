@@ -1,0 +1,57 @@
+<!-- your_app/templates/authentication/open_applications.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Applications</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/open_applications.css' %}">
+</head>
+<body>
+    
+
+    {% if open_applications_data %}
+    <!-- <div class="card-container">
+        {% for scholarship in open_applications_data %}
+            <div class="card">
+                
+                <h3 class="title">{{ scholarship.Name }}</h3>
+                <p><strong>Application Period:</strong> {{ scholarship.Application_Period }}</p>
+                
+            </div>
+        {% endfor %}
+    </div> -->
+    <div class="table">
+        <section class="table_head">
+            <h1>Scholarships with Open Applications</h1>
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Eligibility</th>
+                        <th>Link</th>
+                        <th>Application Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for scholarship in open_applications_data %}
+                        <tr>
+                            <td>{{ scholarship.Name }}</td>
+                            <td><p>{{ scholarship.Eligibility }}</p></td>
+                            <td><a href="{{ scholarship.Links_online_application }}">Click Here</a></td>
+                            <td>{{ scholarship.Application_Period }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+    {% else %}
+        <h3>No scholarships with open applications found.</h3>
+    {% endif %}
+
+</body>
+</html>

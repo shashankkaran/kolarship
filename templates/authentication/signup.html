@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+    <div class="container">
+        <div class="title">Registration</div>
+        <form action="{% url 'signup' %}" method="post" enctype="multipart/form-data" class="form form3">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">First Name</span>
+                    <input type="text" id="fname" name="fname" placeholder="First Name.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Last Name</span>
+                    <input type="text" id="lname" name="lname" placeholder="Last Name.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">User Name</span>
+                    <input type="text" id="username" name="username" placeholder="User Name.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" id="email" name="email" placeholder="Email.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Mobile</span>
+                    <input type="text" id="mobile" name="mobile" placeholder="Mobile Number.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" id="password1" name="password1" placeholder="Create a Password.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="password" id="password2" name="password2" placeholder="Confirm your Password.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Department</span>
+                    <input type="text" id="dept" name="dept" placeholder="Department.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Designation</span>
+                    <input type="text" id="designation" name="designation" placeholder="Designation.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Institute</span>
+                    <input type="text" id="institute" name="institute" placeholder="Institute.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Address</span>
+                    <input type="text" id="address" name="address" placeholder="Address.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">State</span>
+                    <input type="text" id="state" name="state" placeholder="State.." required> 
+                </div>
+                <div class="input-box">
+                    <span class="details">Pin Code</span>
+                    <input type="text" id="pin" name="pin" placeholder="Pin Code.." required> 
+                </div>
+            </div>
+            <div class="button"><input type="submit" value="Register"></div>
+        </form>
+    </div>
+<!-- 
+        <div class="content">
+            <div>
+                <form action="{% url 'signup' %}" method="post" enctype="multipart/form-data" class="form form3">
+                    {% csrf_token %}
+                    <h2>Register</h2>
+                    
+                    <input type="text" id="username" name="username" placeholder="Username.." required maxlength="20" class="box">
+                    
+                    <input type="text" id="fame" name="fname" placeholder="First NAme.." required maxlength="50" class="box">
+                    
+                    <input type="text" id="lname" name="lname" placeholder="Last Name.." required maxlength="50" class="box">
+                    
+                    <input type="email" id="email" name="email" placeholder="Email.." required class="box">
+                    
+                    <input type="password" id="password1" name="password1" placeholder="Create a Password.." required maxlength="20" class="box">
+                    
+                    <input type="password" id="password2" name="password2" placeholder="Confirm Password.." required maxlength="20" class="box">
+                    
+                    <button class="btnn">Submit</button>
+                    
+                    <p class="link">Already have an account?<br>
+                        <a href="/signin">Sign in </a> here</a></p>
+                </form>
+            </div>
+        </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> -->
+</body>
+</html>
