@@ -89,7 +89,7 @@ DATABASES = {
     }
 }
 
-DATABASE_URL= os.en
+# DATABASE_URL= os.en
 
 DATABASES["default"] = dj_database_url.parse("postgres://scholarship_render_user:nxUMcJ4mj1P9MKsOUgFkioLb9awhTNxh@dpg-cosi5akf7o1s73c4smbg-a.oregon-postgres.render.com/scholarship_render")
 
