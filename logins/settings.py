@@ -92,6 +92,7 @@ DATABASES = {
 # DATABASE_URL= os.en
 
 DATABASES["default"] = dj_database_url.parse("postgres://scholarship_render_user:nxUMcJ4mj1P9MKsOUgFkioLb9awhTNxh@dpg-cosi5akf7o1s73c4smbg-a/scholarship_render")
+# DATABASES["default"] = dj_database_url.parse("postgres://scholarship_render_user:nxUMcJ4mj1P9MKsOUgFkioLb9awhTNxh@dpg-cosi5akf7o1s73c4smbg-a.oregon-postgres.render.com/scholarship_render")
 
 
 
@@ -132,7 +133,7 @@ APPEND_SLASH = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'authentication/static'),
 ]
