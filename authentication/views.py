@@ -21,6 +21,10 @@ from django.conf import settings
 from django.contrib import messages
 from .models import Scholarship
 from django.utils import timezone
+from django.views.decorators.csrf import csrf_exempt
+
+
+@csrf_exempt
 
 def scholarship_list(request):
     if not Scholarship.objects.exists():
