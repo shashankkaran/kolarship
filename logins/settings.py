@@ -31,7 +31,7 @@ EMAIL_PORT = EMAIL_PORT
 SECRET_KEY = 'django-insecure-mvje+gksl_ve%0d7(u8cu5p3x$ym%@y23+ujwk__o6y+nk^q$i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['.vercel.app','.now.sh']
 
@@ -90,10 +90,9 @@ DATABASES = {
 }
 
 # DATABASE_URL= os.en
-# internal
-# DATABASES["default"] = dj_database_url.parse("postgres://scholarship_render_user:nxUMcJ4mj1P9MKsOUgFkioLb9awhTNxh@dpg-cosi5akf7o1s73c4smbg-a/scholarship_render")
 
-DATABASES["default"] = dj_database_url.parse("postgres://scholarship_render_user:nxUMcJ4mj1P9MKsOUgFkioLb9awhTNxh@dpg-cosi5akf7o1s73c4smbg-a.oregon-postgres.render.com/scholarship_render")
+DATABASES["default"] = dj_database_url.parse("postgres://scholarship_render_user:nxUMcJ4mj1P9MKsOUgFkioLb9awhTNxh@dpg-cosi5akf7o1s73c4smbg-a/scholarship_render")
+
 
 
 # Password validation
