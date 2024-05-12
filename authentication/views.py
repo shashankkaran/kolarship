@@ -24,7 +24,7 @@ from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
 
-@csrf_exempt
+
 
 def scholarship_list(request):
     if not Scholarship.objects.exists():
@@ -68,7 +68,7 @@ def open_applications_view(request):
     )
 
     return render(request, 'authentication/open_applications.html', {'open_applications_data': open_applications_data})
-
+@csrf_exempt
 def signup(request):
     if request.method == "POST":
         username=request.POST['username']
@@ -212,7 +212,7 @@ def edit_view(request):
                 return redirect('edit_page')
 
     return render(request, "authentication/edit.html")
-
+@csrf_exempt
 @login_required
 def confirm_delete(request):
     if request.method == 'POST':
