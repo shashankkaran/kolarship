@@ -159,7 +159,7 @@ def signin(request):
     return render(request, "authentication/signin.html")
 
 
-@csrf_protect
+@csrf_exempt
 @login_required
 def edit_view(request):
     if request.method == 'POST':
