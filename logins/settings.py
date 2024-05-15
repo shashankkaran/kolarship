@@ -36,7 +36,7 @@ EMAIL_PORT = EMAIL_PORT
 SECRET_KEY = 'django-insecure-mvje+gksl_ve%0d7(u8cu5p3x$ym%@y23+ujwk__o6y+nk^q$i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['.vercel.app','.now.sh']
 
