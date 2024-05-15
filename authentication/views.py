@@ -137,7 +137,7 @@ def signup(request):
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-@csrf_protect
+@csrf_exempt
 def signin(request):
     if request.method == "POST":
         username = request.POST['username']
